@@ -7,7 +7,6 @@ import java.io.Serializable;
  * @author estol
  */
 public class CommunicationObject implements Serializable,
-        CommunicationObjectTypeInterface,
         CommunicationInterface<String>
 {
     
@@ -22,7 +21,6 @@ public class CommunicationObject implements Serializable,
      * this implementation.
      */
     private String payload;
-    private Class payloadClass = payload.getClass();
     
     /**
      * Empty constructor, should be used when the payload is being retrieved.
@@ -61,10 +59,5 @@ public class CommunicationObject implements Serializable,
     public final String getPayload()
     {
         return payload;
-    }
-
-    @Override
-    public Class getGenericClass() {
-        return payloadClass;
     }
 }
